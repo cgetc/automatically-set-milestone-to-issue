@@ -1,0 +1,20 @@
+name: "Automatically set milestone to issue"
+description: "Automatically set milestone to issue"
+inputs:
+  github-token: # id of input
+    description: "Github Token"
+    required: true
+  version-prefix:
+    description: "version prefix"
+    required: false
+    default: "v"
+  version-separator:
+    description: "version separator"
+    required: false
+    default: "."
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  icon: "git-pull-request"
+  color: "green"
