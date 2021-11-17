@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "build": "node_modules/.bin/ncc build src/index.js --license licenses.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/cgetc/automatically-set-milestone-to-issue/issues"
   },
-  "homepage": "https://github.com/cgetc/automatically-set-milestone-to-issue#readme"
+  "homepage": "https://github.com/cgetc/automatically-set-milestone-to-issue#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.32.0"
+  }
 }
