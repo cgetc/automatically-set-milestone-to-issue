@@ -1,0 +1,18 @@
+name: Test set milestone to issue or pull request
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: test wrokflow
+    steps:
+      - uses: actions/checkout@v2
+      - name: run action
+        id: test
+        uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

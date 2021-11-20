@@ -1,0 +1,28 @@
+{
+  "name": "automatically-set-milestone-to-issue",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node_modules/.bin/ncc build src/index.js --license licenses.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgetc/automatically-set-milestone-to-issue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgetc/automatically-set-milestone-to-issue/issues"
+  },
+  "homepage": "https://github.com/cgetc/automatically-set-milestone-to-issue#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.32.0"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  }
+}
