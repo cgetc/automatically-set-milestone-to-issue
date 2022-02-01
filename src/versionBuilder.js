@@ -7,9 +7,11 @@ class VersionBuilder {
     }
 
     build(string) {
-        const versions = string.substring(this.prefix.length).split(this.separator)
-        if (versions && versions.length) {
-            return new Version(versions.map(n => parseInt(n)))
+        if (string.startsWith(this.prefix)) {
+            const versions = string.substring(this.prefix.length).split(this.separator)
+            if (versions && versions.length) {
+                return new Version(versions.map(n => parseInt(n)))
+            }
         }
     }
 }
