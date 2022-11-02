@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: test wrokflow
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: run action
         id: test
         uses: ./
