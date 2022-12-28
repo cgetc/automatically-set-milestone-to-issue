@@ -42,7 +42,15 @@ async function main() {
         const octokit = github.getOctokit(core.getInput('github-token'))
         const versionPrefix = core.getInput('version-prefix')
         const versionSeparator = core.getInput('version-separator')
+        const overwrite = core.getInput('overwrite')
+
+        const { issue, pull_request } = github.context.payload;
+        if (overwrite || !!(issue || pull_request).milestone) {
+            return;
+        }
+
         const { data: { milestone } } = await run(octokit, github.context, versionPrefix, versionSeparator)
+        
         core.setOutput('milestone-number', milestone.number)
         core.setOutput('milestone-title', milestone.title)
     } catch (error) {
