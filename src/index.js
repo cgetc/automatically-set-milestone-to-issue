@@ -45,10 +45,10 @@ async function main() {
         const overwrite = core.getInput('overwrite')
 
         const { issue, pull_request } = github.context.payload;
-        console.log(github.context.payload);//debug
+        core.info(github.context.payload);//debug
 
         if (overwrite || (issue || pull_request).milestone) {
-            console.log("A milestone exists. Do nothing.");
+            core.info("A milestone exists. Do nothing.");
             return;
         }
 
