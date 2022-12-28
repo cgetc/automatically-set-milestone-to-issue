@@ -16,6 +16,9 @@ the prefix of application version. Default `v`
 
 the separator of application version. Default `.`
 
+## `overwrite`
+
+whether to overwrite an existing milestone
 
 ## Outputs
 
