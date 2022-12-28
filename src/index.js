@@ -50,7 +50,6 @@ async function main() {
         }
 
         const { data: { milestone } } = await run(octokit, github.context, versionPrefix, versionSeparator)
-        
         core.setOutput('milestone-number', milestone.number)
         core.setOutput('milestone-title', milestone.title)
     } catch (error) {
