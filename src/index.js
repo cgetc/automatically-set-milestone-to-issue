@@ -46,6 +46,8 @@ async function main() {
 
         const { issue, pull_request } = github.context.payload;
         core.info(github.context.payload);//debug
+        core.info(issue);//debug
+        core.info(pull_request);//debug
 
         if (overwrite || (issue || pull_request).milestone) {
             core.info("A milestone exists. Do nothing.");
