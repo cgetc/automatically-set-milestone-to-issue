@@ -32,7 +32,7 @@ The milestone title that the action set.
 
 ## Example
 ```
-uses: cgetc/automatically-set-milestone-to-issue@v0.1.2
+uses: cgetc/automatically-set-milestone-to-issue@v0.1.4
 with:
   github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
