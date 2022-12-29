@@ -9714,10 +9714,10 @@ async function main() {
         const octokit = github.getOctokit(core.getInput('github-token'))
         const versionPrefix = core.getInput('version-prefix')
         const versionSeparator = core.getInput('version-separator')
-        const overwrite = core.getInput('overwrite')
+        const overwrite = core.getBooleanInput('overwrite')
 
         const { issue, pull_request } = github.context.payload;
-        if (overwrite || (issue || pull_request).milestone) {
+        if (!overwrite && (issue || pull_request).milestone) {
             core.info("A milestone exists. Do nothing.");
             return;
         }
