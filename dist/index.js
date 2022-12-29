@@ -9717,6 +9717,9 @@ async function main() {
         const overwrite = core.getInput('overwrite')
 
         const { issue, pull_request } = github.context.payload;
+        core.info("issue: " + JSON.stringify(issue))
+        core.info("pull_request: " + JSON.stringify(pull_request))
+
         if (overwrite || (issue || pull_request).milestone) {
             core.info("A milestone exists. Do nothing.");
             return;
